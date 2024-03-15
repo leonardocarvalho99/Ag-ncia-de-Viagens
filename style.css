@@ -1,0 +1,374 @@
+@charset 'UTF-8';
+
+:root {
+  --Roxo: #5d15d1;
+  --Main-cor: #eaeaea;
+  --Logo-cor: #6120c5;
+  --Botão-cor: #5812d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.largura {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+body {
+  /* font-family: Raleway; */
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding-block: 10px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 25px;
+  color: var(--Logo-cor);
+}
+
+.imagem-logo {
+  width: 30px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner {
+  /* height: 780px; */
+  padding-block: 65px;
+  background-image: url(assets/.//imagens/bahia.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+
+.orçamento {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  
+  padding-block: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--Roxo);
+  color: white;
+}
+
+/* Fazer a transição */
+/* form, .orçamento {
+opacity: 0;
+}
+
+form, .orçameto::before {
+  transition-timing-function: ease;
+  transition-duration: 2s;
+  transition-property: all;
+  opacity: 1;
+} */
+
+.icone-aviao {
+  width: 22px;
+  transform: rotate(319deg);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  
+  padding: 28px;
+  background-color: white;
+}
+
+form .dados {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block: 20px;
+}
+
+form input {
+  padding: 8px 5px;
+  font-size: 13px;
+}
+
+.data-viagem {
+  display: flex;
+  gap: 20px;
+}
+
+.ida, .volta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+select {
+  height: 30px;
+}
+
+form p {
+  margin-block: 20px;
+}
+
+.preferencias {
+  display: flex;
+  gap: 60px;
+}
+
+button {
+  width: 160px;
+  border: none;
+  margin-top: 25px;
+  padding: 6px;
+  font-size: medium;
+  cursor: pointer;
+  background-color: var(--Roxo);
+  color: white;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding-block: 30px 95px;
+  background-color: var(--Main-cor);
+}
+
+h3 {
+  margin-bottom: 12px;
+}
+
+.galeria-1 {
+  display: flex;
+  gap: 20px;
+}
+
+.galeria-1, .anuncios {
+  margin-block: 20px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.mini-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+main figure {
+  width: 240px;
+  height: 180px;
+  position: relative;
+}
+
+.img-destaque {
+  width: 1020px;
+  height: 372px;
+}
+
+.legenda-galeria {
+  position: absolute;
+  bottom: 0;
+  background-color: #00000085;
+  padding: 6px;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+}
+
+.anuncios {
+  display: flex;
+  gap: 16px;
+}
+
+.anuncios figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 15px;
+}
+
+.legenda-anuncio p:last-of-type {
+  font-size: small;
+  color: gray;  
+}
+
+footer {
+  background-color: var(--Roxo);
+  color: white;
+  padding-block: 20px;
+}
+
+.rodapé {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  line-height: 30px;
+}
+
+li::before {
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+}
+
+ .rj-local::before {
+  background-image: url(assets/imagens/local.png);
+}
+
+.tel::before {
+  background-image: url(assets/imagens/telefone.png);
+}
+
+.email::before {
+  background-image: url(assets/imagens/email.png);
+}
+
+.facebook::before {
+  background-image: url(assets/imagens/fb.png);
+}
+
+.instagram::before {
+  background-image: url(assets/imagens/ig.png);
+}
+
+.twitter::before {
+  background-image: url(assets/imagens/tt.png);
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 1100px) {
+  .largura {
+    width: 90%;
+  }
+
+  .img-destaque {
+    width: 1190px;
+    height: 355px;
+  }
+
+  main figure {
+    width: 46%;
+    height: 171px;
+  }
+}
+
+@media (max-width: 768px) {
+  button {
+    width: 100%;
+  }
+  
+  .galeria-1, .mini-galeria, .anuncios, .rodapé {
+    flex-direction: column;
+  }
+
+  .galeria-1, .mini-galeria {
+    gap: 15px;
+  }
+
+  .img-destaque, main figure {
+    width: 100%;
+    height: 225px;
+  }
+
+  .anuncios {
+    gap: 90px;
+  }
+
+  .anuncios figure {
+    width: 100%;
+    height: 450px;
+  }
+
+  .rodapé {
+    align-items: center;
+     gap: 25px;
+  }
+
+  .contatos, .social {
+    width: 240px;
+  }
+}
+
+@media (max-width: 540px) {
+
+  form {
+    font-size: 13px;
+    padding: 22px;
+  }
+
+  form input {
+    font-size: 11px;
+  }
+
+  form p {
+    margin-block: 30px;
+  }
+
+  main h3 {
+    font-size: 18px;
+  }
+
+  main p {
+    font-size: 14px;
+  }
+
+  .preferencias {
+    display: flex;
+    gap: 30px;
+  }
+
+  .preferencias div {
+    display: flex;
+    gap: 20px
+  }
+
+  .preferencias p {
+    margin-block: 20px 10px;
+  }
+  .data-viagem, .preferencias {
+    flex-direction: column;
+  }
+
+  .rodapé, li {
+    font-size: 83%;
+  }
+
+  .contatos, .social {
+    width: 190px;
+  }
+}
